@@ -1,0 +1,14 @@
+body {
+	background:#f8f8f8;
+	background:url('images/tiles-01.png');
+	font-family:'montserrat', arial;
+}
+
+h1 {
+	color: #DC143C;
+}
+
+.btn {
+	background: #DC143C;
+	color: #FFFFFF
+}
