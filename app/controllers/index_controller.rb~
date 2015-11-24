@@ -55,6 +55,6 @@ end
 			raise Exception.new("Word must be less than or equal to 3 characters.")
 		end
 		if !distinct_letters?(input)
-			raise Exception.new("Word must have unique characters, no repeat letters.")
+			raise Exception.new("Word must have unique characters, no letters repeat.")
 		end
 	end
