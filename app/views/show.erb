@@ -1,7 +1,8 @@
 <h1>Anagrams for <%= "#{@word}" %></h1>
-<ul>
-	<!-- Loop through anagram array to display each anagram -->
-	<% @anagrams.each do |anagram| %>
-		<li><%= anagram %></li>
-	<% end %>
-</ul> 
+<ul class="anagrams">
+    <% if !@anagrams.nil? %>
+      <% @anagrams.each do |word| %>
+        <li><%= word.text %></li>
+      <% end %>
+    <% end %>
+</ul>
