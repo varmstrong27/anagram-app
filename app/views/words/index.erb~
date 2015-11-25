@@ -5,11 +5,11 @@
 		<th>Letters</th>    
 	</thead>
 	<tbody>
-	<% @words.each do |word| %>
+<!--	<% @words.each do |word| %>
 		<tr>
 			<td><%= word.text %></td>
 			<td><%= word.letters %></td>        
 		</tr>
-	<% end %>
+	<% end %> -->
 	</tbody>
 </table>
