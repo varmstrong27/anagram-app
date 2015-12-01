@@ -1,0 +1,30 @@
+<!--<form action="/words" method="post" >
+
+	<div>
+		<label for="word">Enter new word:</label>
+		<input type="text" name="text" />
+	</div>
+
+	<div>
+		<input type="submit" />
+	</div>
+
+</form>-->
+
+<form action="<%= words_form_action(@word) %>" method="post" class="<%= words_form_class(@word) %>" id="<%= words_form_id(@word) %>">
+	<input type="hidden" name="_method" value="<%= words_form_method(@word) %>">
+	<div class="form-group">
+		<label for="text" class="control-label">Word Text</label>
+		<div>
+			<input class="form-control" type="text" name="text" value="<%= @word.text %>" />
+		</div>
+	</div>
+ 
+	<div class="form-group">
+		<div>
+			<button type="submit" class="btn" >
+          Submit
+			</button>
+		</div>
+	</div>
+</form>
