@@ -1,3 +1,4 @@
+# Show word and its anagrams
 get '/anagrams/:word' do
     @word = params[:word]
     alphabetized_string = @word.chars.sort.join
@@ -20,42 +21,9 @@ get '/' do
 	erb :index
 end
 
-	def three_letters?(input)
-    	# return true if input is 3 or less characters
-		if input.length <= 3
-			true
-    	# and false otherwise
-		else
-			false
-		end
+# check for valid input using exceptions
+def valid_input(input)
+	if !(input[/[a-zA-Z]+/]  == input)
+		raise Exception.new("Word must be alpha letters only.")
 	end
-
-	#  check if array has unique letters (no repeating letters)
-	def distinct_letters?(input)
-   	letter_array = input.chars
-   	unique_letters = letter_array.uniq		
-		if unique_letters.length < letter_array.length
-     		false
-   	else
-     		true
-   	end
-	end
-
-	# check if user entered at least 3 unique letters
-	def valid_input?(input)
-    	if three_letters?(input) && distinct_letters?(input)
-      	true
-    	else
-      	false
-    	end
-	end
-
-	# check for valid input using exceptions
-	def valid_input(input)
-		if input.length > 3
-			raise Exception.new("Word must be less than or equal to 3 characters.")
-		end
-		if !distinct_letters?(input)
-			raise Exception.new("Word must have unique characters, no repeat letters.")
-		end
-	end
+end
